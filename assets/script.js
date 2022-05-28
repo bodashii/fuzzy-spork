@@ -25,7 +25,7 @@ function getCityData(city) {
       city +
         "db1e55b08dcc390b353d763a40a58393";
     
-    fetch(apiUrl)
+    fetch(cityData)
         .then((response) => {
             if (response.ok) {
                 response.json().then((data) => {
@@ -39,4 +39,8 @@ function getCityData(city) {
         .catch((error) => {
             alert("Issue connecting to data");
         });
+}
+
+const displayCityWeather = (city, name) {
+
 }
