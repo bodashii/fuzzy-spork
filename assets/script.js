@@ -41,6 +41,23 @@ function getCityData(city) {
         });
 }
 
-const displayCityWeather = (city, name) {
-
+const displayCityWeather = (city, name) => {
+    const cityData =
+      "https://api.openweathermap.org/data/2.5/weather?q=" +
+      city +
+      "db1e55b08dcc390b353d763a40a58393";
+    
+    fetch(cityData)
+        .then((response) => {
+            if (response.ok) {
+                response.json().then((data) => {
+                    console.log(data);
+                });
+            } else {
+                alert("Error: " + response.statusText);
+          }
+        })
+        .catch((error) => {
+            alert("Issue connecting to data");
+    })
 }
